@@ -16,5 +16,27 @@ namespace SteamVac_Fahrplan
         {
             InitializeComponent();
         }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnVerbindungen_Click(object sender, EventArgs e)
+        {
+            grpVerbindungen.Enabled = true;
+            grpVerbindungen.Visible = true;
+            grpAbfahrten.Enabled = false;
+            grpAbfahrten.Visible = false;
+        }
+
+        private void btnAbfahrtstafel_Click(object sender, EventArgs e)
+        {
+            grpAbfahrten.Enabled = true;
+            grpAbfahrten.Visible = true;
+            grpVerbindungen.Enabled = false;
+            grpVerbindungen.Visible = false;
+
+        }
     }
 }
