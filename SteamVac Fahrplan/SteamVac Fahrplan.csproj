@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KonkreteVerbindung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KonkreteVerbindung.Designer.cs">
+      <DependentUpon>KonkreteVerbindung.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="KonkreteVerbindung.resx">
+      <DependentUpon>KonkreteVerbindung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.en-CH.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>

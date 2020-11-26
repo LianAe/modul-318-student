@@ -36,7 +36,7 @@ namespace SteamVac_Fahrplan
             this.btnKarte = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grpVerbindungen = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpVonNach = new System.Windows.Forms.GroupBox();
             this.lblVon = new System.Windows.Forms.Label();
             this.sucheAbfahrtsstation = new System.Windows.Forms.TextBox();
             this.lblNach = new System.Windows.Forms.Label();
@@ -45,16 +45,24 @@ namespace SteamVac_Fahrplan
             this.grpAbfahrtenSuche = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.lblAbfahrtsstationSucheLeer = new System.Windows.Forms.Label();
+            this.lblAnkunftsstationSucheLeer = new System.Windows.Forms.Label();
+            this.grpKonkreteVerbindung = new System.Windows.Forms.GroupBox();
+            this.lblAnkunft = new System.Windows.Forms.Label();
+            this.lblAbfahrt = new System.Windows.Forms.Label();
+            this.lblAbfahrtZeit = new System.Windows.Forms.Label();
+            this.lblAnkunftZeit = new System.Windows.Forms.Label();
+            this.lblFahrtDauer = new System.Windows.Forms.Label();
             this.MenuLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.grpVerbindungen.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpVonNach.SuspendLayout();
             this.grpAbfahrten.SuspendLayout();
             this.grpAbfahrtenSuche.SuspendLayout();
+            this.grpKonkreteVerbindung.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuLayout
@@ -101,21 +109,23 @@ namespace SteamVac_Fahrplan
             // 
             // grpVerbindungen
             // 
-            this.grpVerbindungen.Controls.Add(this.hScrollBar1);
-            this.grpVerbindungen.Controls.Add(this.groupBox1);
+            this.grpVerbindungen.Controls.Add(this.grpKonkreteVerbindung);
+            this.grpVerbindungen.Controls.Add(this.grpVonNach);
             resources.ApplyResources(this.grpVerbindungen, "grpVerbindungen");
             this.grpVerbindungen.Name = "grpVerbindungen";
             this.grpVerbindungen.TabStop = false;
             // 
-            // groupBox1
+            // grpVonNach
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.sucheAnkunftsstation);
-            this.groupBox1.Controls.Add(this.sucheAbfahrtsstation);
-            this.groupBox1.Controls.Add(this.lblNach);
-            this.groupBox1.Controls.Add(this.lblVon);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            resources.ApplyResources(this.grpVonNach, "grpVonNach");
+            this.grpVonNach.Controls.Add(this.lblAnkunftsstationSucheLeer);
+            this.grpVonNach.Controls.Add(this.lblAbfahrtsstationSucheLeer);
+            this.grpVonNach.Controls.Add(this.sucheAnkunftsstation);
+            this.grpVonNach.Controls.Add(this.sucheAbfahrtsstation);
+            this.grpVonNach.Controls.Add(this.lblNach);
+            this.grpVonNach.Controls.Add(this.lblVon);
+            this.grpVonNach.Name = "grpVonNach";
+            this.grpVonNach.TabStop = false;
             // 
             // lblVon
             // 
@@ -126,6 +136,7 @@ namespace SteamVac_Fahrplan
             // 
             resources.ApplyResources(this.sucheAbfahrtsstation, "sucheAbfahrtsstation");
             this.sucheAbfahrtsstation.Name = "sucheAbfahrtsstation";
+            this.sucheAbfahrtsstation.Leave += new System.EventHandler(this.sucheAbfahrtsstation_Leave);
             // 
             // lblNach
             // 
@@ -136,6 +147,7 @@ namespace SteamVac_Fahrplan
             // 
             resources.ApplyResources(this.sucheAnkunftsstation, "sucheAnkunftsstation");
             this.sucheAnkunftsstation.Name = "sucheAnkunftsstation";
+            this.sucheAnkunftsstation.Leave += new System.EventHandler(this.sucheAnkunftsstation_Leave);
             // 
             // grpAbfahrten
             // 
@@ -162,10 +174,53 @@ namespace SteamVac_Fahrplan
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // hScrollBar1
+            // lblAbfahrtsstationSucheLeer
             // 
-            resources.ApplyResources(this.hScrollBar1, "hScrollBar1");
-            this.hScrollBar1.Name = "hScrollBar1";
+            resources.ApplyResources(this.lblAbfahrtsstationSucheLeer, "lblAbfahrtsstationSucheLeer");
+            this.lblAbfahrtsstationSucheLeer.ForeColor = System.Drawing.Color.Red;
+            this.lblAbfahrtsstationSucheLeer.Name = "lblAbfahrtsstationSucheLeer";
+            // 
+            // lblAnkunftsstationSucheLeer
+            // 
+            resources.ApplyResources(this.lblAnkunftsstationSucheLeer, "lblAnkunftsstationSucheLeer");
+            this.lblAnkunftsstationSucheLeer.ForeColor = System.Drawing.Color.Red;
+            this.lblAnkunftsstationSucheLeer.Name = "lblAnkunftsstationSucheLeer";
+            // 
+            // grpKonkreteVerbindung
+            // 
+            this.grpKonkreteVerbindung.Controls.Add(this.lblFahrtDauer);
+            this.grpKonkreteVerbindung.Controls.Add(this.lblAnkunftZeit);
+            this.grpKonkreteVerbindung.Controls.Add(this.lblAbfahrtZeit);
+            this.grpKonkreteVerbindung.Controls.Add(this.lblAbfahrt);
+            this.grpKonkreteVerbindung.Controls.Add(this.lblAnkunft);
+            resources.ApplyResources(this.grpKonkreteVerbindung, "grpKonkreteVerbindung");
+            this.grpKonkreteVerbindung.Name = "grpKonkreteVerbindung";
+            this.grpKonkreteVerbindung.TabStop = false;
+            // 
+            // lblAnkunft
+            // 
+            resources.ApplyResources(this.lblAnkunft, "lblAnkunft");
+            this.lblAnkunft.Name = "lblAnkunft";
+            // 
+            // lblAbfahrt
+            // 
+            resources.ApplyResources(this.lblAbfahrt, "lblAbfahrt");
+            this.lblAbfahrt.Name = "lblAbfahrt";
+            // 
+            // lblAbfahrtZeit
+            // 
+            resources.ApplyResources(this.lblAbfahrtZeit, "lblAbfahrtZeit");
+            this.lblAbfahrtZeit.Name = "lblAbfahrtZeit";
+            // 
+            // lblAnkunftZeit
+            // 
+            resources.ApplyResources(this.lblAnkunftZeit, "lblAnkunftZeit");
+            this.lblAnkunftZeit.Name = "lblAnkunftZeit";
+            // 
+            // lblFahrtDauer
+            // 
+            resources.ApplyResources(this.lblFahrtDauer, "lblFahrtDauer");
+            this.lblFahrtDauer.Name = "lblFahrtDauer";
             // 
             // MainScreen
             // 
@@ -182,11 +237,13 @@ namespace SteamVac_Fahrplan
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.grpVerbindungen.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpVonNach.ResumeLayout(false);
+            this.grpVonNach.PerformLayout();
             this.grpAbfahrten.ResumeLayout(false);
             this.grpAbfahrtenSuche.ResumeLayout(false);
             this.grpAbfahrtenSuche.PerformLayout();
+            this.grpKonkreteVerbindung.ResumeLayout(false);
+            this.grpKonkreteVerbindung.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -199,7 +256,7 @@ namespace SteamVac_Fahrplan
         private System.Windows.Forms.Button btnKarte;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox grpVerbindungen;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpVonNach;
         private System.Windows.Forms.TextBox sucheAnkunftsstation;
         private System.Windows.Forms.TextBox sucheAbfahrtsstation;
         private System.Windows.Forms.Label lblNach;
@@ -208,6 +265,13 @@ namespace SteamVac_Fahrplan
         private System.Windows.Forms.GroupBox grpAbfahrtenSuche;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
+        private System.Windows.Forms.Label lblAbfahrtsstationSucheLeer;
+        private System.Windows.Forms.Label lblAnkunftsstationSucheLeer;
+        private System.Windows.Forms.GroupBox grpKonkreteVerbindung;
+        private System.Windows.Forms.Label lblFahrtDauer;
+        private System.Windows.Forms.Label lblAnkunftZeit;
+        private System.Windows.Forms.Label lblAbfahrtZeit;
+        private System.Windows.Forms.Label lblAbfahrt;
+        private System.Windows.Forms.Label lblAnkunft;
     }
 }
