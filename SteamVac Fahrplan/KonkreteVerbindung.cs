@@ -12,12 +12,13 @@ namespace SteamVac_Fahrplan
 {
     public partial class KonkreteVerbindung : UserControl
     {
-        public KonkreteVerbindung(string AbfahrtZeit, string AnkunftsZeit, string FahrtDauer)
+        public KonkreteVerbindung(string AbfahrtZeit, string AnkunftsZeit, string FahrtDauer, int posX, int posY)
         {
             InitializeComponent();
             lblAbfahrtZeit.Text = AbfahrtZeit;
             lblAnkunftsZeit.Text = AnkunftsZeit;
             lblFahrtDauer.Text = FahrtDauer;
+            Location = new Point(posX, posY);
         }
 
         private void KonkreteVerbindung_Load(object sender, EventArgs e)

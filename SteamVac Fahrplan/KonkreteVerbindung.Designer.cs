@@ -39,7 +39,7 @@ namespace SteamVac_Fahrplan
             // lblAbfahrt
             // 
             this.lblAbfahrt.AutoSize = true;
-            this.lblAbfahrt.Location = new System.Drawing.Point(3, 10);
+            this.lblAbfahrt.Location = new System.Drawing.Point(3, 0);
             this.lblAbfahrt.Name = "lblAbfahrt";
             this.lblAbfahrt.Size = new System.Drawing.Size(44, 13);
             this.lblAbfahrt.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace SteamVac_Fahrplan
             // lblAnkunft
             // 
             this.lblAnkunft.AutoSize = true;
-            this.lblAnkunft.Location = new System.Drawing.Point(3, 32);
+            this.lblAnkunft.Location = new System.Drawing.Point(3, 13);
             this.lblAnkunft.Name = "lblAnkunft";
             this.lblAnkunft.Size = new System.Drawing.Size(47, 13);
             this.lblAnkunft.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace SteamVac_Fahrplan
             // lblAbfahrtZeit
             // 
             this.lblAbfahrtZeit.AutoSize = true;
-            this.lblAbfahrtZeit.Location = new System.Drawing.Point(53, 10);
+            this.lblAbfahrtZeit.Location = new System.Drawing.Point(53, 0);
             this.lblAbfahrtZeit.Name = "lblAbfahrtZeit";
             this.lblAbfahrtZeit.Size = new System.Drawing.Size(0, 13);
             this.lblAbfahrtZeit.TabIndex = 2;
@@ -65,7 +65,7 @@ namespace SteamVac_Fahrplan
             // lblAnkunftsZeit
             // 
             this.lblAnkunftsZeit.AutoSize = true;
-            this.lblAnkunftsZeit.Location = new System.Drawing.Point(56, 32);
+            this.lblAnkunftsZeit.Location = new System.Drawing.Point(56, 13);
             this.lblAnkunftsZeit.Name = "lblAnkunftsZeit";
             this.lblAnkunftsZeit.Size = new System.Drawing.Size(0, 13);
             this.lblAnkunftsZeit.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace SteamVac_Fahrplan
             this.Controls.Add(this.lblAnkunft);
             this.Controls.Add(this.lblAbfahrt);
             this.Name = "KonkreteVerbindung";
-            this.Size = new System.Drawing.Size(565, 87);
+            this.Size = new System.Drawing.Size(568, 83);
             this.Load += new System.EventHandler(this.KonkreteVerbindung_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -94,13 +94,17 @@ namespace SteamVac_Fahrplan
                         KonkreteVerbindung konkreteVerbindung = new KonkreteVerbindung(
                             Verbindung.ConnectionList[i].From.Departure, 
                             Verbindung.ConnectionList[i].To.Arrival,
-                            Verbindung.ConnectionList[i].Duration
+                            Verbindung.ConnectionList[i].Duration,
+                            12,
+                            i * 70 + 100
                             );
                         KonkreteVerbindungen.Add(konkreteVerbindung);
                         KonkreteVerbindungen[i].CreateControl();
+                        grpVerbindungen.Controls.Add(KonkreteVerbindungen[i]);
                         if (KonkreteVerbindungen[i].Created == true)
                         {
-                            MessageBox.Show(KonkreteVerbindungen[i].Location.X.ToString() + KonkreteVerbindungen[i].Location.Y.ToString());
+                            KonkreteVerbindungen[i].Visible = true;
+                            MessageBox.Show(KonkreteVerbindungen[i].Location.X.ToString(), KonkreteVerbindungen[i].Location.Y.ToString());
                         }
                         //KonkreteVerbindungen[i].Location.X = 12;
                     }
