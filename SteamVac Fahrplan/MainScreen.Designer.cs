@@ -45,8 +45,10 @@ namespace SteamVac_Fahrplan
             this.lblVon = new System.Windows.Forms.Label();
             this.grpAbfahrten = new System.Windows.Forms.GroupBox();
             this.grpAbfahrtenSuche = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.sucheAbfahrtstafel = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblAbfahrtstafelSucheLeer = new System.Windows.Forms.Label();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.MenuLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -97,13 +99,13 @@ namespace SteamVac_Fahrplan
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.grpVerbindungen);
             this.splitContainer1.Panel2.Controls.Add(this.grpAbfahrten);
+            this.splitContainer1.Panel2.Controls.Add(this.grpVerbindungen);
             // 
             // grpVerbindungen
             // 
-            resources.ApplyResources(this.grpVerbindungen, "grpVerbindungen");
             this.grpVerbindungen.Controls.Add(this.grpVonNach);
+            resources.ApplyResources(this.grpVerbindungen, "grpVerbindungen");
             this.grpVerbindungen.Name = "grpVerbindungen";
             this.grpVerbindungen.TabStop = false;
             // 
@@ -155,28 +157,42 @@ namespace SteamVac_Fahrplan
             // 
             // grpAbfahrten
             // 
-            this.grpAbfahrten.Controls.Add(this.grpAbfahrtenSuche);
             resources.ApplyResources(this.grpAbfahrten, "grpAbfahrten");
+            this.grpAbfahrten.Controls.Add(this.vScrollBar1);
+            this.grpAbfahrten.Controls.Add(this.grpAbfahrtenSuche);
             this.grpAbfahrten.Name = "grpAbfahrten";
             this.grpAbfahrten.TabStop = false;
             // 
             // grpAbfahrtenSuche
             // 
             resources.ApplyResources(this.grpAbfahrtenSuche, "grpAbfahrtenSuche");
-            this.grpAbfahrtenSuche.Controls.Add(this.textBox2);
+            this.grpAbfahrtenSuche.Controls.Add(this.lblAbfahrtstafelSucheLeer);
+            this.grpAbfahrtenSuche.Controls.Add(this.sucheAbfahrtstafel);
             this.grpAbfahrtenSuche.Controls.Add(this.label2);
             this.grpAbfahrtenSuche.Name = "grpAbfahrtenSuche";
             this.grpAbfahrtenSuche.TabStop = false;
             // 
-            // textBox2
+            // sucheAbfahrtstafel
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
+            resources.ApplyResources(this.sucheAbfahrtstafel, "sucheAbfahrtstafel");
+            this.sucheAbfahrtstafel.Name = "sucheAbfahrtstafel";
+            this.sucheAbfahrtstafel.Leave += new System.EventHandler(this.sucheAbfahrtstafel_Leave);
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
+            // 
+            // lblAbfahrtstafelSucheLeer
+            // 
+            resources.ApplyResources(this.lblAbfahrtstafelSucheLeer, "lblAbfahrtstafelSucheLeer");
+            this.lblAbfahrtstafelSucheLeer.ForeColor = System.Drawing.Color.Red;
+            this.lblAbfahrtstafelSucheLeer.Name = "lblAbfahrtstafelSucheLeer";
+            // 
+            // vScrollBar1
+            // 
+            resources.ApplyResources(this.vScrollBar1, "vScrollBar1");
+            this.vScrollBar1.Name = "vScrollBar1";
             // 
             // MainScreen
             // 
@@ -218,9 +234,11 @@ namespace SteamVac_Fahrplan
         private System.Windows.Forms.Label lblVon;
         private System.Windows.Forms.GroupBox grpAbfahrten;
         private System.Windows.Forms.GroupBox grpAbfahrtenSuche;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox sucheAbfahrtstafel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblAbfahrtsstationSucheLeer;
         private System.Windows.Forms.Label lblAnkunftsstationSucheLeer;
+        private System.Windows.Forms.Label lblAbfahrtstafelSucheLeer;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

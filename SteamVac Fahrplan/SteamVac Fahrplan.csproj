@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KonkreteAbfahrt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KonkreteAbfahrt.Designer.cs">
+      <DependentUpon>KonkreteAbfahrt.cs</DependentUpon>
+    </Compile>
     <Compile Include="KonkreteVerbindung.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="KonkreteAbfahrt.resx">
+      <DependentUpon>KonkreteAbfahrt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KonkreteVerbindung.resx">
       <DependentUpon>KonkreteVerbindung.cs</DependentUpon>
     </EmbeddedResource>

@@ -90,7 +90,7 @@ namespace SteamVac_Fahrplan
             this.Controls.Add(this.lblAnkunft);
             this.Controls.Add(this.lblAbfahrt);
             this.Name = "KonkreteVerbindung";
-            this.Size = new System.Drawing.Size(568, 83);
+            this.Size = new System.Drawing.Size(568, 64);
             this.Load += new System.EventHandler(this.KonkreteVerbindung_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

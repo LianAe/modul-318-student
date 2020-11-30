@@ -127,13 +127,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnVerbindungen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 0</value>
+    <value>105, 0</value>
   </data>
   <data name="btnVerbindungen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnVerbindungen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 33</value>
+    <value>317, 38</value>
   </data>
   <data name="btnVerbindungen.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -160,13 +160,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnAbfahrtstafel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 0</value>
+    <value>422, 0</value>
   </data>
   <data name="btnAbfahrtstafel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnAbfahrtstafel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 33</value>
+    <value>317, 38</value>
   </data>
   <data name="btnAbfahrtstafel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -193,13 +193,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnKarte.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 0</value>
+    <value>739, 0</value>
   </data>
   <data name="btnKarte.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnKarte.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 33</value>
+    <value>320, 38</value>
   </data>
   <data name="btnKarte.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -232,7 +232,7 @@
     <value>1</value>
   </data>
   <data name="MenuLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>710, 33</value>
+    <value>1059, 38</value>
   </data>
   <data name="MenuLayout.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -276,134 +276,134 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="grpVerbindungen.AutoSize" type="System.Boolean, mscorlib">
+  <data name="grpAbfahrten.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="grpVonNach.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="grpAbfahrten.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="vScrollBar1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="vScrollBar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1020, 16</value>
+  </data>
+  <data name="vScrollBar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 543</value>
+  </data>
+  <data name="vScrollBar1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;vScrollBar1.Name" xml:space="preserve">
+    <value>vScrollBar1</value>
+  </data>
+  <data name="&gt;&gt;vScrollBar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.VScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;vScrollBar1.Parent" xml:space="preserve">
+    <value>grpAbfahrten</value>
+  </data>
+  <data name="&gt;&gt;vScrollBar1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grpAbfahrtenSuche.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="&gt;&gt;lblAnkunftsstationSucheLeer.Name" xml:space="preserve">
-    <value>lblAnkunftsstationSucheLeer</value>
+  <data name="lblAbfahrtstafelSucheLeer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;lblAnkunftsstationSucheLeer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblAbfahrtstafelSucheLeer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;lblAnkunftsstationSucheLeer.Parent" xml:space="preserve">
-    <value>grpVonNach</value>
+  <data name="lblAbfahrtstafelSucheLeer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 36</value>
   </data>
-  <data name="&gt;&gt;lblAnkunftsstationSucheLeer.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="lblAbfahrtstafelSucheLeer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 13</value>
   </data>
-  <data name="&gt;&gt;lblAbfahrtsstationSucheLeer.Name" xml:space="preserve">
-    <value>lblAbfahrtsstationSucheLeer</value>
-  </data>
-  <data name="&gt;&gt;lblAbfahrtsstationSucheLeer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAbfahrtsstationSucheLeer.Parent" xml:space="preserve">
-    <value>grpVonNach</value>
-  </data>
-  <data name="&gt;&gt;lblAbfahrtsstationSucheLeer.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;sucheAnkunftsstation.Name" xml:space="preserve">
-    <value>sucheAnkunftsstation</value>
-  </data>
-  <data name="&gt;&gt;sucheAnkunftsstation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sucheAnkunftsstation.Parent" xml:space="preserve">
-    <value>grpVonNach</value>
-  </data>
-  <data name="&gt;&gt;sucheAnkunftsstation.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;sucheAbfahrtsstation.Name" xml:space="preserve">
-    <value>sucheAbfahrtsstation</value>
-  </data>
-  <data name="&gt;&gt;sucheAbfahrtsstation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sucheAbfahrtsstation.Parent" xml:space="preserve">
-    <value>grpVonNach</value>
-  </data>
-  <data name="&gt;&gt;sucheAbfahrtsstation.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblNach.Name" xml:space="preserve">
-    <value>lblNach</value>
-  </data>
-  <data name="&gt;&gt;lblNach.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNach.Parent" xml:space="preserve">
-    <value>grpVonNach</value>
-  </data>
-  <data name="&gt;&gt;lblNach.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblVon.Name" xml:space="preserve">
-    <value>lblVon</value>
-  </data>
-  <data name="&gt;&gt;lblVon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVon.Parent" xml:space="preserve">
-    <value>grpVonNach</value>
-  </data>
-  <data name="&gt;&gt;lblVon.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="grpVonNach.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 13</value>
-  </data>
-  <data name="grpVonNach.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 54</value>
-  </data>
-  <data name="grpVonNach.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblAbfahrtstafelSucheLeer.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;grpVonNach.Name" xml:space="preserve">
-    <value>grpVonNach</value>
+  <data name="lblAbfahrtstafelSucheLeer.Text" xml:space="preserve">
+    <value>Dieses Feld darf nicht leer sein!</value>
   </data>
-  <data name="&gt;&gt;grpVonNach.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpVonNach.Parent" xml:space="preserve">
-    <value>grpVerbindungen</value>
-  </data>
-  <data name="&gt;&gt;grpVonNach.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="grpVerbindungen.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="grpVerbindungen.Enabled" type="System.Boolean, mscorlib">
+  <data name="lblAbfahrtstafelSucheLeer.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="grpVerbindungen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;lblAbfahrtstafelSucheLeer.Name" xml:space="preserve">
+    <value>lblAbfahrtstafelSucheLeer</value>
   </data>
-  <data name="grpVerbindungen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>710, 309</value>
+  <data name="&gt;&gt;lblAbfahrtstafelSucheLeer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="grpVerbindungen.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="&gt;&gt;lblAbfahrtstafelSucheLeer.Parent" xml:space="preserve">
+    <value>grpAbfahrtenSuche</value>
   </data>
-  <data name="grpVerbindungen.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;grpVerbindungen.Name" xml:space="preserve">
-    <value>grpVerbindungen</value>
-  </data>
-  <data name="&gt;&gt;grpVerbindungen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpVerbindungen.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;grpVerbindungen.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblAbfahrtstafelSucheLeer.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="sucheAbfahrtstafel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="sucheAbfahrtstafel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 20</value>
+  </data>
+  <data name="sucheAbfahrtstafel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;sucheAbfahrtstafel.Name" xml:space="preserve">
+    <value>sucheAbfahrtstafel</value>
+  </data>
+  <data name="&gt;&gt;sucheAbfahrtstafel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sucheAbfahrtstafel.Parent" xml:space="preserve">
+    <value>grpAbfahrtenSuche</value>
+  </data>
+  <data name="&gt;&gt;sucheAbfahrtstafel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 16</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Station:</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>grpAbfahrtenSuche</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grpAbfahrtenSuche.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 26</value>
+  </data>
+  <data name="grpAbfahrtenSuche.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 76</value>
+  </data>
+  <data name="grpAbfahrtenSuche.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;grpAbfahrtenSuche.Name" xml:space="preserve">
     <value>grpAbfahrtenSuche</value>
@@ -415,7 +415,7 @@
     <value>grpAbfahrten</value>
   </data>
   <data name="&gt;&gt;grpAbfahrtenSuche.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="grpAbfahrten.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -427,7 +427,7 @@
     <value>0, 0</value>
   </data>
   <data name="grpAbfahrten.Size" type="System.Drawing.Size, System.Drawing">
-    <value>710, 309</value>
+    <value>1059, 568</value>
   </data>
   <data name="grpAbfahrten.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -445,40 +445,10 @@
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;grpAbfahrten.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>710, 346</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="grpVonNach.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <data name="lblAnkunftsstationSucheLeer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -648,107 +618,89 @@
   <data name="&gt;&gt;lblVon.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="grpAbfahrtenSuche.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+  <data name="grpVonNach.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 13</value>
   </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
+  <data name="grpVonNach.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 54</value>
   </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
-    <value>grpAbfahrtenSuche</value>
-  </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>grpAbfahrtenSuche</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="grpAbfahrtenSuche.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 13</value>
-  </data>
-  <data name="grpAbfahrtenSuche.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 39</value>
-  </data>
-  <data name="grpAbfahrtenSuche.TabIndex" type="System.Int32, mscorlib">
+  <data name="grpVonNach.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;grpAbfahrtenSuche.Name" xml:space="preserve">
-    <value>grpAbfahrtenSuche</value>
+  <data name="&gt;&gt;grpVonNach.Name" xml:space="preserve">
+    <value>grpVonNach</value>
   </data>
-  <data name="&gt;&gt;grpAbfahrtenSuche.Type" xml:space="preserve">
+  <data name="&gt;&gt;grpVonNach.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;grpAbfahrtenSuche.Parent" xml:space="preserve">
-    <value>grpAbfahrten</value>
+  <data name="&gt;&gt;grpVonNach.Parent" xml:space="preserve">
+    <value>grpVerbindungen</value>
   </data>
-  <data name="&gt;&gt;grpAbfahrtenSuche.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;grpVonNach.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 13</value>
+  <data name="grpVerbindungen.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 20</value>
+  <data name="grpVerbindungen.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="grpVerbindungen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
+  <data name="grpVerbindungen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1059, 568</value>
   </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="grpVerbindungen.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
-    <value>grpAbfahrtenSuche</value>
+  <data name="grpVerbindungen.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;grpVerbindungen.Name" xml:space="preserve">
+    <value>grpVerbindungen</value>
   </data>
-  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;grpVerbindungen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;grpVerbindungen.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
   </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 16</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;grpVerbindungen.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Station:</value>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>grpAbfahrtenSuche</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1059, 610</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -759,11 +711,11 @@
   <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="$this.AutoScrollMinSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 300</value>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>710, 346</value>
+    <value>1059, 610</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1200, 700</value>
