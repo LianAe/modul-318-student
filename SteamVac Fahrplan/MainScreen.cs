@@ -317,7 +317,7 @@ namespace SteamVac_Fahrplan
 
         private void auswahlDatumZeitVerbindungen_CheckedChanged(object sender, EventArgs e)
         {
-            if (auswahlDatumZeitVerbindungen.Checked == true)
+            if (auswahlDatumZeitVerbindungen.Checked)
                 datumZeitVerbindungen.Enabled = true;
 
             if (auswahlDatumZeitVerbindungen.Checked == false)
@@ -327,7 +327,7 @@ namespace SteamVac_Fahrplan
 
         private void auswahlDatumZeitAbfahrten_CheckedChanged(object sender, EventArgs e)
         {
-            if (auswahlDatumZeitAbfahrten.Checked == true)
+            if (auswahlDatumZeitAbfahrten.Checked)
                 datumZeitAbfahrten.Enabled = true;
 
             if (auswahlDatumZeitAbfahrten.Checked == false)
