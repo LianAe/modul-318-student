@@ -17,7 +17,7 @@ namespace SteamVac_Fahrplan
             InitializeComponent();
             lblZugName.Text = zugName;
             lblEndstation.Text = endstation;
-            lblAbfahrt.Text = AbfahrtZeit;
+            lblAbfahrt.Text = DateTime.Parse(AbfahrtZeit).ToString("g");
             Location = new Point(posX, posY);
         }
 

@@ -176,8 +176,8 @@ namespace SteamVac_Fahrplan
             // 
             // grpAbfahrten
             // 
-            this.grpAbfahrten.Controls.Add(this.grpAbfahrtenSuche);
             resources.ApplyResources(this.grpAbfahrten, "grpAbfahrten");
+            this.grpAbfahrten.Controls.Add(this.grpAbfahrtenSuche);
             this.grpAbfahrten.Name = "grpAbfahrten";
             this.grpAbfahrten.TabStop = false;
             // 
@@ -225,6 +225,7 @@ namespace SteamVac_Fahrplan
             this.SizeChanged += new System.EventHandler(this.MainScreen_SizeChanged);
             this.splitMainScreen.Panel1.ResumeLayout(false);
             this.splitMainScreen.Panel2.ResumeLayout(false);
+            this.splitMainScreen.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitMainScreen)).EndInit();
             this.splitMainScreen.ResumeLayout(false);
             this.MenuLayout.ResumeLayout(false);

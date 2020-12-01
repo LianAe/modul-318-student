@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Device.Location;
 
 namespace SteamVac_Fahrplan
 {
@@ -19,6 +20,9 @@ namespace SteamVac_Fahrplan
         private ITransport ankunftsstationSuche;
         private ITransport verbindungen;
         private ITransport abfahrtstafelSuche;
+
+        //zum überprüfen ob der standort das erste mal gesucht wird
+        private bool ErstesMalStandortSuche = false;
         public MainScreen()
         {
             InitializeComponent();
@@ -92,45 +96,11 @@ namespace SteamVac_Fahrplan
             if (sucheAbfahrtstafel.Text != "")
             {
                 lblAbfahrtstafelSucheLeer.Visible = false;
-                var abfahrtstafel = abfahrtstafelSuche.GetStationBoard(
+                StationBoardRoot abfahrtstafel = abfahrtstafelSuche.GetStationBoard(
                     sucheAbfahrtstafel.Text,
                     abfahrtstafelSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Id
                 );
-
-                //die abfahrtstafel wird ausgefüllt
-                if (abfahrtstafel != null)
-                {
-                    List<KonkreteAbfahrt> konkreteAbfahrten = new List<KonkreteAbfahrt>();
-
-                    //fals es schon konkrete Abfahrtenfenster hat werden sie entfernt
-                    if (konkreteAbfahrten.Count > 0)
-                    {
-                        foreach (KonkreteAbfahrt konkreteAbfahrt in grpAbfahrten.Controls)
-                        {
-                            grpAbfahrten.Controls.Remove(konkreteAbfahrt);
-                        }
-                    }
-
-                    //die position wird zentriert
-                    int posXkonkreteAbfahrten = (grpAbfahrten.Width - 570) / 2;
-                    if (posXkonkreteAbfahrten < 0)
-                        posXkonkreteAbfahrten = 0;
-
-                    //die konkreten Abfahrtsfenster werden erstellt und hinzugefügt
-                    for (int i = 0; i < 20; i++)
-                    {
-                        KonkreteAbfahrt konkreteAbfahrt = new KonkreteAbfahrt(
-                            abfahrtstafel.Entries[i].Name,
-                            abfahrtstafel.Entries[i].To,
-                            abfahrtstafel.Entries[i].Stop.Departure.Hour.ToString() + ":" + abfahrtstafel.Entries[i].Stop.Departure.Minute.ToString(),
-                            posXkonkreteAbfahrten,
-                            i * 80 + 80
-                        );
-                        konkreteAbfahrten.Add(konkreteAbfahrt);
-                        grpAbfahrten.Controls.Add(konkreteAbfahrten[i]);
-                    }
-
-                }
+                abfahrtstafelAusfüllen(abfahrtstafel);
             }
             else
             {
@@ -164,6 +134,38 @@ namespace SteamVac_Fahrplan
             sucheAnkunftsstation.Text = temp;
             überprüfeSuchfeldAbfahrtstation();
             überprüfeSuchfeldAnkunftstation();
+        }
+
+        private void btnStandort_Click(object sender, EventArgs e)
+        {
+            lblAbfahrtstafelSucheLeer.Visible = false;
+
+            //Die aktuelen Kordinaten werden gesucht. 
+            GeoCoordinate Standort = findeStandort();
+
+            //Es wird überprüft ob etwas gefunden wurde.
+            if (Standort != GeoCoordinate.Unknown)
+            {
+                //die nachste Station wird mit hilfe von den Kordinaten gesucht.
+                Stations abfahrtsOrt = abfahrtstafelSuche.GetStationsMitStandort(Standort);
+
+                //Die abfahrten von der 2 gefundenen Station werden angezeigt. Die erste ist die andresse vom aktuellen Standort.
+                StationBoardRoot abfahtstafel = abfahrtstafelSuche.GetStationBoard(
+                    abfahrtsOrt.StationList[1].Name,
+                    abfahrtsOrt.StationList[1].Id
+                    );
+
+                //Die gewälte Station wird im such feld angezeigt.
+                sucheAbfahrtstafel.Text = abfahrtsOrt.StationList[1].Name;
+
+                //Die Abfahrtstafel wird ausgefüllt.
+                abfahrtstafelAusfüllen(abfahtstafel);
+            }
+            else
+            {
+                MessageBox.Show("Standort nicht gefunden");
+            }
+            
         }
 
         private void überprüfeSuchfeldAbfahrtstation()
@@ -215,7 +217,13 @@ namespace SteamVac_Fahrplan
         //Methode die die Verbindungen als felder auflistet
         private void VerbindungenAusfüllen()
         {
-            var Verbindung = verbindungen.GetConnections(sucheAbfahrtsstation.Text, sucheAnkunftsstation.Text); 
+            var Verbindung = verbindungen.GetConnections(sucheAbfahrtsstation.Text, sucheAnkunftsstation.Text);
+
+            //überprüfung ob es Verbindungen gibt
+            if (Verbindung.ConnectionList.Count == 0)
+                MessageBox.Show("Keine Verbindungen gefunden");
+
+            //liste für alle Verbindungen wird erstelt
             List<KonkreteVerbindung> KonkreteVerbindungen = new List<KonkreteVerbindung>();
 
             //die exestierenden Werte und Felder löschen
@@ -233,8 +241,6 @@ namespace SteamVac_Fahrplan
             //Neue felder mit den konkreten Verbindungen weren ersstelt
             for (int i = 0; i != Verbindung.ConnectionList.Count; i++)
             {
-                if (Verbindung != null)
-                {
                     KonkreteVerbindung konkreteVerbindung = new KonkreteVerbindung(
                         Verbindung.ConnectionList[i].From.Departure,
                         Verbindung.ConnectionList[i].To.Arrival,
@@ -245,14 +251,74 @@ namespace SteamVac_Fahrplan
                     KonkreteVerbindungen.Add(konkreteVerbindung);
                     grpVerbindungen.Height = 70 + KonkreteVerbindungen[i].Location.Y;
                     grpVerbindungen.Controls.Add(KonkreteVerbindungen[i]);
-                }
             }
 
         }
 
-        private void btnStandort_Click(object sender, EventArgs e)
+        private void abfahrtstafelAusfüllen(StationBoardRoot abfahrtstafel)
         {
-            Geo
+            //die abfahrtstafel wird ausgefüllt
+            if (abfahrtstafel != null)
+            {
+                List<KonkreteAbfahrt> konkreteAbfahrten = new List<KonkreteAbfahrt>();
+
+                //fals es schon konkrete Abfahrtenfenster hat werden sie entfernt
+                if (konkreteAbfahrten.Count > 0)
+                {
+                    foreach (KonkreteAbfahrt konkreteAbfahrt in grpAbfahrten.Controls)
+                    {
+                        grpAbfahrten.Controls.Remove(konkreteAbfahrt);
+                    }
+                }
+
+                for (int i = 0; i < abfahrtstafel.Entries.Count; i++)
+                {
+                    if (abfahrtstafel.Entries[i].Stop.Departure > DateTime.Now + TimeSpan.FromHours(24))
+                    {
+                        abfahrtstafel.Entries.RemoveAt(i);
+                    }
+                        
+                }
+
+                //die position wird zentriert
+                int posXkonkreteAbfahrten = (grpAbfahrten.Width - 570) / 2;
+                if (posXkonkreteAbfahrten < 0)
+                    posXkonkreteAbfahrten = 0;
+
+                //die konkreten Abfahrtsfenster werden erstellt und hinzugefügt
+                for (int i = 0; i < 20; i++)
+                {
+                    KonkreteAbfahrt konkreteAbfahrt = new KonkreteAbfahrt(
+                        abfahrtstafel.Entries[i].Name,
+                        abfahrtstafel.Entries[i].To,
+                        abfahrtstafel.Entries[i].Stop.Departure.Hour.ToString() + ":" + abfahrtstafel.Entries[i].Stop.Departure.Minute.ToString(),
+                        posXkonkreteAbfahrten,
+                        i * 80 + 80
+                    );
+                    konkreteAbfahrten.Add(konkreteAbfahrt);
+                    grpAbfahrten.Controls.Add(konkreteAbfahrten[i]);
+                }
+
+            }
+        }
+
+        private GeoCoordinate findeStandort()
+        {
+
+            GeoCoordinateWatcher tracker = new GeoCoordinateWatcher();
+
+            tracker.TryStart(false, TimeSpan.FromMilliseconds(1000));
+
+            GeoCoordinate aktuelleKordinate = tracker.Position.Location;
+
+            if (aktuelleKordinate != null)
+            {
+                return aktuelleKordinate;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

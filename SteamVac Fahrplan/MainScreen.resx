@@ -294,6 +294,9 @@
   <data name="splitMainScreen.Panel2.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
     <value>0, 5</value>
   </data>
+  <data name="grpAbfahrten.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="grpAbfahrtenSuche.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -409,7 +412,7 @@
     <value>3</value>
   </data>
   <data name="grpAbfahrtenSuche.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 13</value>
+    <value>201, 13</value>
   </data>
   <data name="grpAbfahrtenSuche.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 54</value>
@@ -439,7 +442,7 @@
     <value>0, 226</value>
   </data>
   <data name="grpAbfahrten.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 150</value>
+    <value>685, 86</value>
   </data>
   <data name="grpAbfahrten.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -682,7 +685,7 @@
     <value>7</value>
   </data>
   <data name="grpVonNach.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 13</value>
+    <value>89, 13</value>
   </data>
   <data name="grpVonNach.Size" type="System.Drawing.Size, System.Drawing">
     <value>506, 54</value>
@@ -709,7 +712,7 @@
     <value>0, 0</value>
   </data>
   <data name="grpVerbindungen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 226</value>
+    <value>685, 226</value>
   </data>
   <data name="grpVerbindungen.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>

@@ -1,6 +1,8 @@
-﻿using System.IO;
+﻿using System.CodeDom;
+using System.IO;
 using System.Net;
 using Newtonsoft.Json;
+using System.Device.Location;
 
 namespace SwissTransport
 {
@@ -24,6 +26,25 @@ namespace SwissTransport
             return null;
         }
 
+        public Stations GetStationsMitStandort(GeoCoordinate coordinate)
+        {
+            //coordinate = System.Uri.EscapeDataString(coordinate);
+            double X = coordinate.Latitude;
+            double Y = coordinate.Longitude;
+            var request = CreateWebRequest("http://transport.opendata.ch/v1/locations?x=" + X + "&y=" + Y);
+            var response = request.GetResponse();
+            var responseStream = response.GetResponseStream();
+
+            if (responseStream != null)
+            {
+                var message = new StreamReader(responseStream).ReadToEnd();
+                var stations = JsonConvert.DeserializeObject<Stations>(message
+                    , new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                return stations;
+            }
+
+            return null;
+        }
         public StationBoardRoot GetStationBoard(string station, string id)
         {
             station = System.Uri.EscapeDataString(station);
