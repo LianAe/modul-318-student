@@ -300,6 +300,60 @@
   <data name="grpAbfahrtenSuche.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <data name="auswahlDatumZeitAbfahrten.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="auswahlDatumZeitAbfahrten.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="auswahlDatumZeitAbfahrten.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 52</value>
+  </data>
+  <data name="auswahlDatumZeitAbfahrten.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="auswahlDatumZeitAbfahrten.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="auswahlDatumZeitAbfahrten.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;auswahlDatumZeitAbfahrten.Name" xml:space="preserve">
+    <value>auswahlDatumZeitAbfahrten</value>
+  </data>
+  <data name="&gt;&gt;auswahlDatumZeitAbfahrten.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;auswahlDatumZeitAbfahrten.Parent" xml:space="preserve">
+    <value>grpAbfahrtenSuche</value>
+  </data>
+  <data name="&gt;&gt;auswahlDatumZeitAbfahrten.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="datumZeitAbfahrten.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="datumZeitAbfahrten.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 52</value>
+  </data>
+  <data name="datumZeitAbfahrten.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="datumZeitAbfahrten.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;datumZeitAbfahrten.Name" xml:space="preserve">
+    <value>datumZeitAbfahrten</value>
+  </data>
+  <data name="&gt;&gt;datumZeitAbfahrten.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;datumZeitAbfahrten.Parent" xml:space="preserve">
+    <value>grpAbfahrtenSuche</value>
+  </data>
+  <data name="&gt;&gt;datumZeitAbfahrten.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnStandort.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 11</value>
   </data>
@@ -322,7 +376,7 @@
     <value>grpAbfahrtenSuche</value>
   </data>
   <data name="&gt;&gt;btnStandort.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblAbfahrtstafelSucheLeer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -355,7 +409,7 @@
     <value>grpAbfahrtenSuche</value>
   </data>
   <data name="&gt;&gt;lblAbfahrtstafelSucheLeer.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="sucheAbfahrtstafel.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 13</value>
@@ -376,7 +430,7 @@
     <value>grpAbfahrtenSuche</value>
   </data>
   <data name="&gt;&gt;sucheAbfahrtstafel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -409,13 +463,13 @@
     <value>grpAbfahrtenSuche</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="grpAbfahrtenSuche.Location" type="System.Drawing.Point, System.Drawing">
     <value>201, 13</value>
   </data>
   <data name="grpAbfahrtenSuche.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 54</value>
+    <value>282, 76</value>
   </data>
   <data name="grpAbfahrtenSuche.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -439,10 +493,10 @@
     <value>False</value>
   </data>
   <data name="grpAbfahrten.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 226</value>
+    <value>0, 167</value>
   </data>
   <data name="grpAbfahrten.Size" type="System.Drawing.Size, System.Drawing">
-    <value>685, 86</value>
+    <value>685, 108</value>
   </data>
   <data name="grpAbfahrten.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -464,6 +518,57 @@
   </data>
   <data name="grpVonNach.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
+  </data>
+  <data name="auswahlDatumZeitVerbindungen.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="auswahlDatumZeitVerbindungen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 52</value>
+  </data>
+  <data name="auswahlDatumZeitVerbindungen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="auswahlDatumZeitVerbindungen.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="auswahlDatumZeitVerbindungen.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;auswahlDatumZeitVerbindungen.Name" xml:space="preserve">
+    <value>auswahlDatumZeitVerbindungen</value>
+  </data>
+  <data name="&gt;&gt;auswahlDatumZeitVerbindungen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;auswahlDatumZeitVerbindungen.Parent" xml:space="preserve">
+    <value>grpVonNach</value>
+  </data>
+  <data name="&gt;&gt;auswahlDatumZeitVerbindungen.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="datumZeitVerbindungen.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="datumZeitVerbindungen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 52</value>
+  </data>
+  <data name="datumZeitVerbindungen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="datumZeitVerbindungen.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;datumZeitVerbindungen.Name" xml:space="preserve">
+    <value>datumZeitVerbindungen</value>
+  </data>
+  <data name="&gt;&gt;datumZeitVerbindungen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;datumZeitVerbindungen.Parent" xml:space="preserve">
+    <value>grpVonNach</value>
+  </data>
+  <data name="&gt;&gt;datumZeitVerbindungen.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btnAbfahrtAnkunftTauschen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -490,7 +595,7 @@
     <value>grpVonNach</value>
   </data>
   <data name="&gt;&gt;btnAbfahrtAnkunftTauschen.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnVerbindungSuchen.Location" type="System.Drawing.Point, System.Drawing">
     <value>386, 11</value>
@@ -514,7 +619,7 @@
     <value>grpVonNach</value>
   </data>
   <data name="&gt;&gt;btnVerbindungSuchen.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblAnkunftsstationSucheLeer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -547,7 +652,7 @@
     <value>grpVonNach</value>
   </data>
   <data name="&gt;&gt;lblAnkunftsstationSucheLeer.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblAbfahrtsstationSucheLeer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -577,7 +682,7 @@
     <value>grpVonNach</value>
   </data>
   <data name="&gt;&gt;lblAbfahrtsstationSucheLeer.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="sucheAnkunftsstation.Location" type="System.Drawing.Point, System.Drawing">
     <value>256, 13</value>
@@ -598,7 +703,7 @@
     <value>grpVonNach</value>
   </data>
   <data name="&gt;&gt;sucheAnkunftsstation.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="sucheAbfahrtsstation.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 13</value>
@@ -619,7 +724,7 @@
     <value>grpVonNach</value>
   </data>
   <data name="&gt;&gt;sucheAbfahrtsstation.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="lblNach.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -649,7 +754,7 @@
     <value>grpVonNach</value>
   </data>
   <data name="&gt;&gt;lblNach.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lblVon.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -682,13 +787,13 @@
     <value>grpVonNach</value>
   </data>
   <data name="&gt;&gt;lblVon.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="grpVonNach.Location" type="System.Drawing.Point, System.Drawing">
     <value>89, 13</value>
   </data>
   <data name="grpVonNach.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 54</value>
+    <value>506, 77</value>
   </data>
   <data name="grpVonNach.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -712,7 +817,7 @@
     <value>0, 0</value>
   </data>
   <data name="grpVerbindungen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>685, 226</value>
+    <value>685, 167</value>
   </data>
   <data name="grpVerbindungen.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>

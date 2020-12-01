@@ -96,6 +96,7 @@ namespace SteamVac_Fahrplan
             if (sucheAbfahrtstafel.Text != "")
             {
                 lblAbfahrtstafelSucheLeer.Visible = false;
+                sucheAbfahrtstafel.Text = abfahrtsstationSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Name;
                 StationBoardRoot abfahrtstafel = abfahrtstafelSuche.GetStationBoard(
                     sucheAbfahrtstafel.Text,
                     abfahrtstafelSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Id
@@ -261,23 +262,16 @@ namespace SteamVac_Fahrplan
             if (abfahrtstafel != null)
             {
                 List<KonkreteAbfahrt> konkreteAbfahrten = new List<KonkreteAbfahrt>();
-
+                
                 //fals es schon konkrete Abfahrtenfenster hat werden sie entfernt
-                if (konkreteAbfahrten.Count > 0)
-                {
-                    foreach (KonkreteAbfahrt konkreteAbfahrt in grpAbfahrten.Controls)
-                    {
-                        grpAbfahrten.Controls.Remove(konkreteAbfahrt);
-                    }
-                }
+                while (grpAbfahrten.Controls.ContainsKey(nameof(KonkreteAbfahrt)))
+                    grpAbfahrten.Controls.RemoveByKey(nameof(KonkreteAbfahrt));
 
+                //Entfernt alle abfahrten die erst in mehr als 24 Stunden sind.
                 for (int i = 0; i < abfahrtstafel.Entries.Count; i++)
                 {
                     if (abfahrtstafel.Entries[i].Stop.Departure > DateTime.Now + TimeSpan.FromHours(24))
-                    {
                         abfahrtstafel.Entries.RemoveAt(i);
-                    }
-                        
                 }
 
                 //die position wird zentriert
@@ -319,6 +313,25 @@ namespace SteamVac_Fahrplan
             {
                 return null;
             }
+        }
+
+        private void auswahlDatumZeitVerbindungen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (auswahlDatumZeitVerbindungen.Checked == true)
+                datumZeitVerbindungen.Enabled = true;
+
+            if (auswahlDatumZeitVerbindungen.Checked == false)
+                datumZeitVerbindungen.Enabled = false;
+        }
+
+
+        private void auswahlDatumZeitAbfahrten_CheckedChanged(object sender, EventArgs e)
+        {
+            if (auswahlDatumZeitAbfahrten.Checked == true)
+                datumZeitAbfahrten.Enabled = true;
+
+            if (auswahlDatumZeitAbfahrten.Checked == false)
+                datumZeitAbfahrten.Enabled = false;
         }
     }
 }

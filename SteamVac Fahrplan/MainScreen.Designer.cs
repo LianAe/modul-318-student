@@ -35,8 +35,18 @@ namespace SteamVac_Fahrplan
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnKarte = new System.Windows.Forms.Button();
+            this.grpAbfahrten = new System.Windows.Forms.GroupBox();
+            this.grpAbfahrtenSuche = new System.Windows.Forms.GroupBox();
+            this.auswahlDatumZeitAbfahrten = new System.Windows.Forms.CheckBox();
+            this.datumZeitAbfahrten = new System.Windows.Forms.DateTimePicker();
+            this.btnStandort = new System.Windows.Forms.Button();
+            this.lblAbfahrtstafelSucheLeer = new System.Windows.Forms.Label();
+            this.sucheAbfahrtstafel = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpVerbindungen = new System.Windows.Forms.GroupBox();
             this.grpVonNach = new System.Windows.Forms.GroupBox();
+            this.auswahlDatumZeitVerbindungen = new System.Windows.Forms.CheckBox();
+            this.datumZeitVerbindungen = new System.Windows.Forms.DateTimePicker();
             this.btnAbfahrtAnkunftTauschen = new System.Windows.Forms.Button();
             this.btnVerbindungSuchen = new System.Windows.Forms.Button();
             this.lblAnkunftsstationSucheLeer = new System.Windows.Forms.Label();
@@ -45,21 +55,15 @@ namespace SteamVac_Fahrplan
             this.sucheAbfahrtsstation = new System.Windows.Forms.TextBox();
             this.lblNach = new System.Windows.Forms.Label();
             this.lblVon = new System.Windows.Forms.Label();
-            this.grpAbfahrten = new System.Windows.Forms.GroupBox();
-            this.grpAbfahrtenSuche = new System.Windows.Forms.GroupBox();
-            this.lblAbfahrtstafelSucheLeer = new System.Windows.Forms.Label();
-            this.sucheAbfahrtstafel = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnStandort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitMainScreen)).BeginInit();
             this.splitMainScreen.Panel1.SuspendLayout();
             this.splitMainScreen.Panel2.SuspendLayout();
             this.splitMainScreen.SuspendLayout();
             this.MenuLayout.SuspendLayout();
-            this.grpVerbindungen.SuspendLayout();
-            this.grpVonNach.SuspendLayout();
             this.grpAbfahrten.SuspendLayout();
             this.grpAbfahrtenSuche.SuspendLayout();
+            this.grpVerbindungen.SuspendLayout();
+            this.grpVonNach.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitMainScreen
@@ -105,6 +109,64 @@ namespace SteamVac_Fahrplan
             this.btnKarte.Name = "btnKarte";
             this.btnKarte.UseVisualStyleBackColor = true;
             // 
+            // grpAbfahrten
+            // 
+            resources.ApplyResources(this.grpAbfahrten, "grpAbfahrten");
+            this.grpAbfahrten.Controls.Add(this.grpAbfahrtenSuche);
+            this.grpAbfahrten.Name = "grpAbfahrten";
+            this.grpAbfahrten.TabStop = false;
+            // 
+            // grpAbfahrtenSuche
+            // 
+            resources.ApplyResources(this.grpAbfahrtenSuche, "grpAbfahrtenSuche");
+            this.grpAbfahrtenSuche.Controls.Add(this.auswahlDatumZeitAbfahrten);
+            this.grpAbfahrtenSuche.Controls.Add(this.datumZeitAbfahrten);
+            this.grpAbfahrtenSuche.Controls.Add(this.btnStandort);
+            this.grpAbfahrtenSuche.Controls.Add(this.lblAbfahrtstafelSucheLeer);
+            this.grpAbfahrtenSuche.Controls.Add(this.sucheAbfahrtstafel);
+            this.grpAbfahrtenSuche.Controls.Add(this.label2);
+            this.grpAbfahrtenSuche.Name = "grpAbfahrtenSuche";
+            this.grpAbfahrtenSuche.TabStop = false;
+            // 
+            // auswahlDatumZeitAbfahrten
+            // 
+            resources.ApplyResources(this.auswahlDatumZeitAbfahrten, "auswahlDatumZeitAbfahrten");
+            this.auswahlDatumZeitAbfahrten.Name = "auswahlDatumZeitAbfahrten";
+            this.auswahlDatumZeitAbfahrten.UseVisualStyleBackColor = true;
+            this.auswahlDatumZeitAbfahrten.CheckedChanged += new System.EventHandler(this.auswahlDatumZeitAbfahrten_CheckedChanged);
+            // 
+            // datumZeitAbfahrten
+            // 
+            resources.ApplyResources(this.datumZeitAbfahrten, "datumZeitAbfahrten");
+            this.datumZeitAbfahrten.MaxDate = new System.DateTime(3000, 1, 1, 0, 0, 0, 0);
+            this.datumZeitAbfahrten.MinDate = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
+            this.datumZeitAbfahrten.Name = "datumZeitAbfahrten";
+            this.datumZeitAbfahrten.Value = new System.DateTime(2020, 12, 1, 0, 0, 0, 0);
+            // 
+            // btnStandort
+            // 
+            resources.ApplyResources(this.btnStandort, "btnStandort");
+            this.btnStandort.Name = "btnStandort";
+            this.btnStandort.UseVisualStyleBackColor = true;
+            this.btnStandort.Click += new System.EventHandler(this.btnStandort_Click);
+            // 
+            // lblAbfahrtstafelSucheLeer
+            // 
+            resources.ApplyResources(this.lblAbfahrtstafelSucheLeer, "lblAbfahrtstafelSucheLeer");
+            this.lblAbfahrtstafelSucheLeer.ForeColor = System.Drawing.Color.Red;
+            this.lblAbfahrtstafelSucheLeer.Name = "lblAbfahrtstafelSucheLeer";
+            // 
+            // sucheAbfahrtstafel
+            // 
+            resources.ApplyResources(this.sucheAbfahrtstafel, "sucheAbfahrtstafel");
+            this.sucheAbfahrtstafel.Name = "sucheAbfahrtstafel";
+            this.sucheAbfahrtstafel.Leave += new System.EventHandler(this.sucheAbfahrtstafel_Leave);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
             // grpVerbindungen
             // 
             this.grpVerbindungen.Controls.Add(this.grpVonNach);
@@ -115,6 +177,8 @@ namespace SteamVac_Fahrplan
             // grpVonNach
             // 
             resources.ApplyResources(this.grpVonNach, "grpVonNach");
+            this.grpVonNach.Controls.Add(this.auswahlDatumZeitVerbindungen);
+            this.grpVonNach.Controls.Add(this.datumZeitVerbindungen);
             this.grpVonNach.Controls.Add(this.btnAbfahrtAnkunftTauschen);
             this.grpVonNach.Controls.Add(this.btnVerbindungSuchen);
             this.grpVonNach.Controls.Add(this.lblAnkunftsstationSucheLeer);
@@ -125,6 +189,21 @@ namespace SteamVac_Fahrplan
             this.grpVonNach.Controls.Add(this.lblVon);
             this.grpVonNach.Name = "grpVonNach";
             this.grpVonNach.TabStop = false;
+            // 
+            // auswahlDatumZeitVerbindungen
+            // 
+            resources.ApplyResources(this.auswahlDatumZeitVerbindungen, "auswahlDatumZeitVerbindungen");
+            this.auswahlDatumZeitVerbindungen.Name = "auswahlDatumZeitVerbindungen";
+            this.auswahlDatumZeitVerbindungen.UseVisualStyleBackColor = true;
+            this.auswahlDatumZeitVerbindungen.CheckedChanged += new System.EventHandler(this.auswahlDatumZeitVerbindungen_CheckedChanged);
+            // 
+            // datumZeitVerbindungen
+            // 
+            resources.ApplyResources(this.datumZeitVerbindungen, "datumZeitVerbindungen");
+            this.datumZeitVerbindungen.MaxDate = new System.DateTime(3000, 1, 1, 0, 0, 0, 0);
+            this.datumZeitVerbindungen.MinDate = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
+            this.datumZeitVerbindungen.Name = "datumZeitVerbindungen";
+            this.datumZeitVerbindungen.Value = new System.DateTime(2020, 12, 1, 0, 0, 0, 0);
             // 
             // btnAbfahrtAnkunftTauschen
             // 
@@ -174,47 +253,6 @@ namespace SteamVac_Fahrplan
             resources.ApplyResources(this.lblVon, "lblVon");
             this.lblVon.Name = "lblVon";
             // 
-            // grpAbfahrten
-            // 
-            resources.ApplyResources(this.grpAbfahrten, "grpAbfahrten");
-            this.grpAbfahrten.Controls.Add(this.grpAbfahrtenSuche);
-            this.grpAbfahrten.Name = "grpAbfahrten";
-            this.grpAbfahrten.TabStop = false;
-            // 
-            // grpAbfahrtenSuche
-            // 
-            resources.ApplyResources(this.grpAbfahrtenSuche, "grpAbfahrtenSuche");
-            this.grpAbfahrtenSuche.Controls.Add(this.btnStandort);
-            this.grpAbfahrtenSuche.Controls.Add(this.lblAbfahrtstafelSucheLeer);
-            this.grpAbfahrtenSuche.Controls.Add(this.sucheAbfahrtstafel);
-            this.grpAbfahrtenSuche.Controls.Add(this.label2);
-            this.grpAbfahrtenSuche.Name = "grpAbfahrtenSuche";
-            this.grpAbfahrtenSuche.TabStop = false;
-            // 
-            // lblAbfahrtstafelSucheLeer
-            // 
-            resources.ApplyResources(this.lblAbfahrtstafelSucheLeer, "lblAbfahrtstafelSucheLeer");
-            this.lblAbfahrtstafelSucheLeer.ForeColor = System.Drawing.Color.Red;
-            this.lblAbfahrtstafelSucheLeer.Name = "lblAbfahrtstafelSucheLeer";
-            // 
-            // sucheAbfahrtstafel
-            // 
-            resources.ApplyResources(this.sucheAbfahrtstafel, "sucheAbfahrtstafel");
-            this.sucheAbfahrtstafel.Name = "sucheAbfahrtstafel";
-            this.sucheAbfahrtstafel.Leave += new System.EventHandler(this.sucheAbfahrtstafel_Leave);
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // btnStandort
-            // 
-            resources.ApplyResources(this.btnStandort, "btnStandort");
-            this.btnStandort.Name = "btnStandort";
-            this.btnStandort.UseVisualStyleBackColor = true;
-            this.btnStandort.Click += new System.EventHandler(this.btnStandort_Click);
-            // 
             // MainScreen
             // 
             resources.ApplyResources(this, "$this");
@@ -229,12 +267,12 @@ namespace SteamVac_Fahrplan
             ((System.ComponentModel.ISupportInitialize)(this.splitMainScreen)).EndInit();
             this.splitMainScreen.ResumeLayout(false);
             this.MenuLayout.ResumeLayout(false);
-            this.grpVerbindungen.ResumeLayout(false);
-            this.grpVonNach.ResumeLayout(false);
-            this.grpVonNach.PerformLayout();
             this.grpAbfahrten.ResumeLayout(false);
             this.grpAbfahrtenSuche.ResumeLayout(false);
             this.grpAbfahrtenSuche.PerformLayout();
+            this.grpVerbindungen.ResumeLayout(false);
+            this.grpVonNach.ResumeLayout(false);
+            this.grpVonNach.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,5 +300,9 @@ namespace SteamVac_Fahrplan
         private System.Windows.Forms.Button btnVerbindungSuchen;
         private System.Windows.Forms.Button btnAbfahrtAnkunftTauschen;
         private System.Windows.Forms.Button btnStandort;
+        private System.Windows.Forms.CheckBox auswahlDatumZeitAbfahrten;
+        private System.Windows.Forms.DateTimePicker datumZeitAbfahrten;
+        private System.Windows.Forms.CheckBox auswahlDatumZeitVerbindungen;
+        private System.Windows.Forms.DateTimePicker datumZeitVerbindungen;
     }
 }
