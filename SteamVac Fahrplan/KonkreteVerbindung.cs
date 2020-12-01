@@ -23,7 +23,6 @@ namespace SteamVac_Fahrplan
 
         private void KonkreteVerbindung_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

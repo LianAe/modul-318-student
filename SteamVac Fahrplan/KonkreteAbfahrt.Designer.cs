@@ -39,42 +39,47 @@ namespace SteamVac_Fahrplan
             // lblZugName
             // 
             this.lblZugName.AutoSize = true;
-            this.lblZugName.Location = new System.Drawing.Point(4, 4);
+            this.lblZugName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZugName.Location = new System.Drawing.Point(3, 4);
             this.lblZugName.Name = "lblZugName";
-            this.lblZugName.Size = new System.Drawing.Size(0, 13);
+            this.lblZugName.Size = new System.Drawing.Size(0, 20);
             this.lblZugName.TabIndex = 0;
             // 
             // lblEndstation
             // 
             this.lblEndstation.AutoSize = true;
-            this.lblEndstation.Location = new System.Drawing.Point(96, 4);
+            this.lblEndstation.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndstation.Location = new System.Drawing.Point(109, 4);
             this.lblEndstation.Name = "lblEndstation";
-            this.lblEndstation.Size = new System.Drawing.Size(0, 13);
+            this.lblEndstation.Size = new System.Drawing.Size(0, 20);
             this.lblEndstation.TabIndex = 1;
             // 
             // lblAbfahrt
             // 
             this.lblAbfahrt.AutoSize = true;
-            this.lblAbfahrt.Location = new System.Drawing.Point(394, 4);
+            this.lblAbfahrt.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbfahrt.Location = new System.Drawing.Point(404, 4);
             this.lblAbfahrt.Name = "lblAbfahrt";
-            this.lblAbfahrt.Size = new System.Drawing.Size(0, 13);
+            this.lblAbfahrt.Size = new System.Drawing.Size(0, 20);
             this.lblAbfahrt.TabIndex = 2;
             // 
             // lblEndstationBeschriftung
             // 
             this.lblEndstationBeschriftung.AutoSize = true;
-            this.lblEndstationBeschriftung.Location = new System.Drawing.Point(62, 4);
+            this.lblEndstationBeschriftung.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndstationBeschriftung.Location = new System.Drawing.Point(68, 4);
             this.lblEndstationBeschriftung.Name = "lblEndstationBeschriftung";
-            this.lblEndstationBeschriftung.Size = new System.Drawing.Size(34, 13);
+            this.lblEndstationBeschriftung.Size = new System.Drawing.Size(41, 20);
             this.lblEndstationBeschriftung.TabIndex = 3;
             this.lblEndstationBeschriftung.Text = "nach:";
             // 
             // lblAbfahrtBeschriftung
             // 
             this.lblAbfahrtBeschriftung.AutoSize = true;
+            this.lblAbfahrtBeschriftung.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbfahrtBeschriftung.Location = new System.Drawing.Point(350, 4);
             this.lblAbfahrtBeschriftung.Name = "lblAbfahrtBeschriftung";
-            this.lblAbfahrtBeschriftung.Size = new System.Drawing.Size(44, 13);
+            this.lblAbfahrtBeschriftung.Size = new System.Drawing.Size(54, 20);
             this.lblAbfahrtBeschriftung.TabIndex = 4;
             this.lblAbfahrtBeschriftung.Text = "Abfahrt:";
             // 
@@ -89,7 +94,7 @@ namespace SteamVac_Fahrplan
             this.Controls.Add(this.lblEndstation);
             this.Controls.Add(this.lblZugName);
             this.Name = "KonkreteAbfahrt";
-            this.Size = new System.Drawing.Size(493, 64);
+            this.Size = new System.Drawing.Size(570, 64);
             this.Load += new System.EventHandler(this.KonkreteAbfahrt_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
