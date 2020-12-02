@@ -284,7 +284,6 @@ namespace SteamVac_Fahrplan
             this.sucheAnkunftsstation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             resources.ApplyResources(this.sucheAnkunftsstation, "sucheAnkunftsstation");
             this.sucheAnkunftsstation.Name = "sucheAnkunftsstation";
-            this.sucheAnkunftsstation.TextChanged += new System.EventHandler(this.sucheAnkunftsstation_TextChanged);
             this.sucheAnkunftsstation.Leave += new System.EventHandler(this.sucheAnkunftsstation_Leave);
             // 
             // sucheAbfahrtsstation
@@ -292,7 +291,7 @@ namespace SteamVac_Fahrplan
             this.sucheAbfahrtsstation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             resources.ApplyResources(this.sucheAbfahrtsstation, "sucheAbfahrtsstation");
             this.sucheAbfahrtsstation.Name = "sucheAbfahrtsstation";
-            this.sucheAbfahrtsstation.TextChanged += new System.EventHandler(this.sucheAbfahrtsstation_TextChanged);
+            this.sucheAbfahrtsstation.Leave += new System.EventHandler(this.sucheAbfahrtsstation_Leave);
             // 
             // lblNach
             // 

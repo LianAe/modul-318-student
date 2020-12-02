@@ -30,7 +30,6 @@ namespace SteamVac_Fahrplan
         public MainScreen()
         {
             InitializeComponent();
-            Connections Verbindung;
         }
 
         private void MainScreen_Load(object sender, EventArgs e)
@@ -120,11 +119,11 @@ namespace SteamVac_Fahrplan
                     brauchtAutovervolständigungAbfahrtsstation = false;
                 }
             }
-        }*/
+        }
             
     
 
-       /* private void sucheAnkunftsstation_TextChanged(object sender, EventArgs e)
+        private void sucheAnkunftsstation_TextChanged(object sender, EventArgs e)
         {
             if (sucheAnkunftsstation.Text.Length > 4 && brauchtAutovervolständigungAnkunftsstation)
             {
@@ -166,7 +165,7 @@ namespace SteamVac_Fahrplan
                     }
 
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     MessageBox.Show("Standort nicht gefunden!");
                 }
@@ -291,7 +290,7 @@ namespace SteamVac_Fahrplan
                         sucheAbfahrtsstation.Text = abfahrtsstation.StationList[0].Name.ToString();
                     }
                 }
-                catch (Exception exception)//Es wird eine Fehlermeldung angezeigt fals keine Station gefunden wird
+                catch (Exception)//Es wird eine Fehlermeldung angezeigt fals keine Station gefunden wird
                 {
                     MessageBox.Show("Station wurde nicht gefunden");
 
@@ -323,7 +322,7 @@ namespace SteamVac_Fahrplan
                         sucheAnkunftsstation.Text = ankunftsstation.StationList[0].Name.ToString();
                     }
                 }
-                catch (Exception exception)//Es wird eine Fehlermeldung angezeigt fals keine Station gefunden wird
+                catch (Exception)//Es wird eine Fehlermeldung angezeigt fals keine Station gefunden wird
                 {
                     MessageBox.Show("Station wurde nicht gefunden");
 

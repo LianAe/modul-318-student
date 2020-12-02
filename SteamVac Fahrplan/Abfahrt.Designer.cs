@@ -84,7 +84,7 @@ namespace SteamVac_Fahrplan
             this.lblTitelAbfahrt.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitelAbfahrt.Location = new System.Drawing.Point(0, 0);
             this.lblTitelAbfahrt.Name = "lblTitelAbfahrt";
-            this.lblTitelAbfahrt.Size = new System.Drawing.Size(234, 50);
+            this.lblTitelAbfahrt.Size = new System.Drawing.Size(334, 50);
             this.lblTitelAbfahrt.TabIndex = 12;
             this.lblTitelAbfahrt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -103,7 +103,7 @@ namespace SteamVac_Fahrplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 261);
+            this.ClientSize = new System.Drawing.Size(334, 231);
             this.Controls.Add(this.lblAnkunftOrt);
             this.Controls.Add(this.lblAnkunftGleisBeschriftung);
             this.Controls.Add(this.lblPfeil);

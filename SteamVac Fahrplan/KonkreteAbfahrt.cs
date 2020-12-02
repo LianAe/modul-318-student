@@ -33,7 +33,7 @@ namespace SteamVac_Fahrplan
 
         private void KonkreteAbfahrt_Click(object sender, EventArgs e)
         {
-            Abfahrt abfahrt = new Abfahrt(Name, lblEndstation.Text, lblAbfahrt.Text);
+            Abfahrt abfahrt = new Abfahrt(lblZugName.Text, lblEndstation.Text, lblAbfahrt.Text);
             abfahrt.Show();
         }
     }
