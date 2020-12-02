@@ -89,14 +89,17 @@ namespace SteamVac_Fahrplan
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.lblFahrtDauer);
             this.Controls.Add(this.lblAnkunftsZeit);
             this.Controls.Add(this.lblAbfahrtZeit);
             this.Controls.Add(this.lblAnkunft);
             this.Controls.Add(this.lblAbfahrt);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "KonkreteVerbindung";
-            this.Size = new System.Drawing.Size(570, 64);
+            this.Size = new System.Drawing.Size(566, 60);
             this.Load += new System.EventHandler(this.KonkreteVerbindung_Load);
+            this.Click += new System.EventHandler(this.KonkreteVerbindung_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

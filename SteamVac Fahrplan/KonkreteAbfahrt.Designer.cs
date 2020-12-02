@@ -96,6 +96,7 @@ namespace SteamVac_Fahrplan
             this.Name = "KonkreteAbfahrt";
             this.Size = new System.Drawing.Size(570, 64);
             this.Load += new System.EventHandler(this.KonkreteAbfahrt_Load);
+            this.Click += new System.EventHandler(this.KonkreteAbfahrt_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

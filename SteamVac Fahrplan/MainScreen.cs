@@ -21,11 +21,16 @@ namespace SteamVac_Fahrplan
         private ITransport verbindungen;
         private ITransport abfahrtstafelSuche;
 
-        //zum überprüfen ob der standort das erste mal gesucht wird
-        private bool ErstesMalStandortSuche = false;
+        /*
+        private bool brauchtAutovervolständigungAbfahrtsstation = true;
+        private bool brauchtAutovervolständigungAnkunftsstation = true;
+        private AutoCompleteStringCollection autovervollständigung = new AutoCompleteStringCollection();
+        */
+
         public MainScreen()
         {
             InitializeComponent();
+            Connections Verbindung;
         }
 
         private void MainScreen_Load(object sender, EventArgs e)
@@ -43,11 +48,14 @@ namespace SteamVac_Fahrplan
             //Die "-5" ist damit es nicht ein scrollbar anzeit
             if (grpVerbindungen.Controls.ContainsKey(nameof(KonkreteVerbindung)) == false)
                 grpVerbindungen.Height = splitMainScreen.Panel2.Height - 5;
-
+            
             if(grpVerbindungen.Controls.ContainsKey(nameof(KonkreteVerbindung)) && splitMainScreen.Panel2.Height > 400)
                 grpVerbindungen.Height = splitMainScreen.Panel2.Height - 5;
 
             if (grpAbfahrten.Controls.ContainsKey(nameof(KonkreteAbfahrt)) == false)
+                grpAbfahrten.Height = splitMainScreen.Panel2.Height - 5;
+
+            if (grpAbfahrten.Controls.ContainsKey(nameof(KonkreteAbfahrt)) && splitMainScreen.Panel2.Height > 400)
                 grpAbfahrten.Height = splitMainScreen.Panel2.Height - 5;
 
         }
@@ -90,23 +98,88 @@ namespace SteamVac_Fahrplan
             überprüfeSuchfeldAnkunftstation();
         }
 
+        //nicht fertig
+        /*private void sucheAbfahrtsstation_TextChanged(object sender, EventArgs e)
+        {
+            if (sucheAbfahrtsstation.Text.Length > 4 && brauchtAutovervolständigungAbfahrtsstation)
+            {
+                autovervollständigung.Clear();
+                var abfahrtsstation = abfahrtsstationSuche.GetStations(sucheAbfahrtsstation.Text);
+                if (abfahrtsstation.StationList[0].Name == null)
+                {
+                    MessageBox.Show("Keine Station gefunden");
+                }
+                else
+                {
+                    for (int i = 0; i < abfahrtsstation.StationList.Count && i < 10; i++)
+                    {
+                        autovervollständigung.Add(abfahrtsstation.StationList[i].Name);
+                    }
+                    sucheAbfahrtsstation.AutoCompleteCustomSource = autovervollständigung;
+                    sucheAbfahrtsstation.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    brauchtAutovervolständigungAbfahrtsstation = false;
+                }
+            }
+        }*/
+            
+    
+
+       /* private void sucheAnkunftsstation_TextChanged(object sender, EventArgs e)
+        {
+            if (sucheAnkunftsstation.Text.Length > 4 && brauchtAutovervolständigungAnkunftsstation)
+            {
+                autovervollständigung.Clear();
+                var ankunftsstation = ankunftsstationSuche.GetStations(sucheAnkunftsstation.Text);
+                if (ankunftsstation.StationList[0].Name == null)
+                {
+                    MessageBox.Show("Keine Station gefunden");
+                }
+                else
+                {
+                for (int i = 0; i < ankunftsstation.StationList.Count && i < 10; i++)
+                {
+                    autovervollständigung.Add(ankunftsstation.StationList[i].Name);
+                }
+                
+                sucheAnkunftsstation.AutoCompleteCustomSource = autovervollständigung;
+                sucheAnkunftsstation.AutoCompleteMode = AutoCompleteMode.Suggest;
+                brauchtAutovervolständigungAnkunftsstation = false;
+                    
+                }
+            }
+        }*/
 
         private void sucheAbfahrtstafel_Leave(object sender, EventArgs e)
         {
             if (sucheAbfahrtstafel.Text != "")
             {
-                lblAbfahrtstafelSucheLeer.Visible = false;
-                sucheAbfahrtstafel.Text = abfahrtsstationSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Name;
-                StationBoardRoot abfahrtstafel = abfahrtstafelSuche.GetStationBoard(
-                    sucheAbfahrtstafel.Text,
-                    abfahrtstafelSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Id
-                );
-                abfahrtstafelAusfüllen(abfahrtstafel);
+                try
+                {
+                    lblAbfahrtstafelSucheLeer.Visible = false; 
+                    if (abfahrtsstationSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Name == null)
+                    {
+                        sucheAbfahrtstafel.Text = abfahrtsstationSuche.GetStations(sucheAbfahrtstafel.Text).StationList[1].Name;
+                    }
+                    else
+                    {
+                        sucheAbfahrtstafel.Text = abfahrtsstationSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Name;
+                    }
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Standort nicht gefunden!");
+                }
             }
             else
             {
                 lblAbfahrtstafelSucheLeer.Visible = true;//eine meldung weist den User darauf das, dass Feld leer ist
             }
+        }
+
+        private void btnAbfahrtenSuchen_Click(object sender, EventArgs e)
+        {
+            findeAbfahrten();
         }
 
         private void btnVerbindungSuchen_Click(object sender, EventArgs e)
@@ -149,18 +222,12 @@ namespace SteamVac_Fahrplan
             {
                 //die nachste Station wird mit hilfe von den Kordinaten gesucht.
                 Stations abfahrtsOrt = abfahrtstafelSuche.GetStationsMitStandort(Standort);
-
-                //Die abfahrten von der 2 gefundenen Station werden angezeigt. Die erste ist die andresse vom aktuellen Standort.
-                StationBoardRoot abfahtstafel = abfahrtstafelSuche.GetStationBoard(
-                    abfahrtsOrt.StationList[1].Name,
-                    abfahrtsOrt.StationList[1].Id
-                    );
+                
+                
 
                 //Die gewälte Station wird im such feld angezeigt.
                 sucheAbfahrtstafel.Text = abfahrtsOrt.StationList[1].Name;
 
-                //Die Abfahrtstafel wird ausgefüllt.
-                abfahrtstafelAusfüllen(abfahtstafel);
             }
             else
             {
@@ -169,15 +236,60 @@ namespace SteamVac_Fahrplan
             
         }
 
+        private void auswahlDatumZeitAbfahrten_CheckedChanged(object sender, EventArgs e)
+        {
+            if (auswahlDatumZeitAbfahrten.Checked)
+            {
+                datumAbfahrten.Enabled = true;
+                zeitAbfahrt.Enabled = true;
+            }
+
+            if (auswahlDatumZeitAbfahrten.Checked == false)
+            {
+                datumAbfahrten.Enabled = false;
+                zeitAbfahrt.Enabled = true;
+            }
+        }
+
+        private void auswahlDatumZeitNutzen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (auswahlDatumZeitVerbindungen.Checked)
+            {
+                datumVerbindungen.Enabled = true;
+                zeitVerbindungen.Enabled = true;
+                auswahlAnkunftAbfahrt.Enabled = true;
+                auswahlAnkunftAbfahrt.SelectedIndex = 0;
+            }
+
+
+            if (auswahlDatumZeitVerbindungen.Checked == false)
+            {
+                datumVerbindungen.Enabled = false;
+                zeitVerbindungen.Enabled = false;
+                auswahlAnkunftAbfahrt.Enabled = false;
+            }
+        }
+
+
         private void überprüfeSuchfeldAbfahrtstation()
         {
             if (sucheAbfahrtsstation.Text != "")//Es wird geschaut das der wert nicht null ist
             {
+
                 var abfahrtsstation = abfahrtsstationSuche.GetStations(sucheAbfahrtsstation.Text);
                 lblAbfahrtsstationSucheLeer.Visible = false;
+
+                //Fals es an beiden Stellen null ist popt ein Fenster auf.
                 try
                 {
-                    sucheAbfahrtsstation.Text = abfahrtsstation.StationList[0].Name.ToString();
+                    if (abfahrtsstation.StationList[0].Name == null)
+                    {
+                        sucheAbfahrtsstation.Text = abfahrtsstation.StationList[1].Name.ToString();
+                    }
+                    else
+                    {
+                        sucheAbfahrtsstation.Text = abfahrtsstation.StationList[0].Name.ToString();
+                    }
                 }
                 catch (Exception exception)//Es wird eine Fehlermeldung angezeigt fals keine Station gefunden wird
                 {
@@ -188,7 +300,8 @@ namespace SteamVac_Fahrplan
             }
             else
             {
-                lblAbfahrtsstationSucheLeer.Visible = true;//eine meldung weist den User darauf das, dass Feld leer ist
+                //eine meldung weist den User darauf das, dass Feld leer ist
+                lblAbfahrtsstationSucheLeer.Visible = true;
             }
         }
 
@@ -196,11 +309,19 @@ namespace SteamVac_Fahrplan
         {
             if (sucheAnkunftsstation.Text != "")//Es wird geschaut das der wert nicht null ist
             {
+
                 var ankunftsstation = ankunftsstationSuche.GetStations(sucheAnkunftsstation.Text);
                 lblAnkunftsstationSucheLeer.Visible = false;
                 try
                 {
-                    sucheAnkunftsstation.Text = ankunftsstation.StationList[0].Name.ToString();
+                    if (ankunftsstation.StationList[0].Name == null)
+                    {
+                        sucheAnkunftsstation.Text = ankunftsstation.StationList[1].Name.ToString();
+                    }
+                    else
+                    {
+                        sucheAnkunftsstation.Text = ankunftsstation.StationList[0].Name.ToString();
+                    }
                 }
                 catch (Exception exception)//Es wird eine Fehlermeldung angezeigt fals keine Station gefunden wird
                 {
@@ -218,7 +339,22 @@ namespace SteamVac_Fahrplan
         //Methode die die Verbindungen als felder auflistet
         private void VerbindungenAusfüllen()
         {
-            var Verbindung = verbindungen.GetConnections(sucheAbfahrtsstation.Text, sucheAnkunftsstation.Text);
+
+            Connections Verbindung;
+            //Es wird überprüft ob die DatumZeit auswahl genutzt werden soll.
+            if (datumVerbindungen.Checked)
+            {
+                Verbindung = verbindungen.GetConnectionsAtTime(
+                    sucheAbfahrtsstation.Text, 
+                    sucheAnkunftsstation.Text,
+                    datumVerbindungen.Value,
+                    zeitVerbindungen.Value,
+                    auswahlAnkunftAbfahrt.SelectedIndex);
+            }
+            else
+            {
+                Verbindung = verbindungen.GetConnections(sucheAbfahrtsstation.Text, sucheAnkunftsstation.Text);
+            }
 
             //überprüfung ob es Verbindungen gibt
             if (Verbindung.ConnectionList.Count == 0)
@@ -247,13 +383,17 @@ namespace SteamVac_Fahrplan
                         Verbindung.ConnectionList[i].To.Arrival,
                         Verbindung.ConnectionList[i].Duration,
                         posXkonkreteVerbindungen,
-                        i * 70 + 100
+                        i * 70 + 100,
+                        Verbindung.ConnectionList[i].To.Platform,
+                        Verbindung.ConnectionList[i].From.Platform,
+                        Verbindung.ConnectionList[i].To.Station.Name,
+                        Verbindung.ConnectionList[i].From.Station.Name
+
                     );
                     KonkreteVerbindungen.Add(konkreteVerbindung);
                     grpVerbindungen.Height = 70 + KonkreteVerbindungen[i].Location.Y;
                     grpVerbindungen.Controls.Add(KonkreteVerbindungen[i]);
             }
-
         }
 
         private void abfahrtstafelAusfüllen(StationBoardRoot abfahrtstafel)
@@ -285,9 +425,9 @@ namespace SteamVac_Fahrplan
                     KonkreteAbfahrt konkreteAbfahrt = new KonkreteAbfahrt(
                         abfahrtstafel.Entries[i].Name,
                         abfahrtstafel.Entries[i].To,
-                        abfahrtstafel.Entries[i].Stop.Departure.Hour.ToString() + ":" + abfahrtstafel.Entries[i].Stop.Departure.Minute.ToString(),
+                        abfahrtstafel.Entries[i].Stop.Departure.ToString("g"),
                         posXkonkreteAbfahrten,
-                        i * 80 + 80
+                        i * 80 + 120
                     );
                     konkreteAbfahrten.Add(konkreteAbfahrt);
                     grpAbfahrten.Controls.Add(konkreteAbfahrten[i]);
@@ -301,37 +441,54 @@ namespace SteamVac_Fahrplan
 
             GeoCoordinateWatcher tracker = new GeoCoordinateWatcher();
 
-            tracker.TryStart(false, TimeSpan.FromMilliseconds(1000));
+            tracker.TryStart(false, TimeSpan.FromMilliseconds(2000));
 
+            //Die Position die der Tracker hat wird eine Variable zugewiesen
             GeoCoordinate aktuelleKordinate = tracker.Position.Location;
+            
+            //Es wird noch mehr mals die Kordinate abgefragt, weil es sonst oft kein Standort findet
+            for (int i = 0; i < 10; i++)
+            {
+                if (aktuelleKordinate != null)
+                {
+                    return aktuelleKordinate;
+                }
+                else
+                {
+                    aktuelleKordinate = tracker.Position.Location;
+                    tracker.TryStart(false, TimeSpan.FromMilliseconds(1000));
+                }
 
-            if (aktuelleKordinate != null)
-            {
-                return aktuelleKordinate;
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
+            
         }
 
-        private void auswahlDatumZeitVerbindungen_CheckedChanged(object sender, EventArgs e)
+        private void findeAbfahrten()
         {
-            if (auswahlDatumZeitVerbindungen.Checked)
-                datumZeitVerbindungen.Enabled = true;
+            
+                StationBoardRoot abfahrtstafel;
+                if (auswahlDatumZeitAbfahrten.Checked)
+                {
+                    string datumZeitAbfahrt = datumAbfahrten.Value.ToString("yyyy-MM-dd")
+                                              + " "
+                                              + zeitAbfahrt.Value.ToString("t");
 
-            if (auswahlDatumZeitVerbindungen.Checked == false)
-                datumZeitVerbindungen.Enabled = false;
-        }
-
-
-        private void auswahlDatumZeitAbfahrten_CheckedChanged(object sender, EventArgs e)
-        {
-            if (auswahlDatumZeitAbfahrten.Checked)
-                datumZeitAbfahrten.Enabled = true;
-
-            if (auswahlDatumZeitAbfahrten.Checked == false)
-                datumZeitAbfahrten.Enabled = false;
+                    abfahrtstafel = abfahrtstafelSuche.GetStationBoardAtTime(
+                        sucheAbfahrtstafel.Text,
+                        abfahrtstafelSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Id,
+                        datumZeitAbfahrt
+                    );
+                }
+                else
+                {
+                    abfahrtstafel = abfahrtstafelSuche.GetStationBoard(
+                        sucheAbfahrtstafel.Text,
+                        abfahrtstafelSuche.GetStations(sucheAbfahrtstafel.Text).StationList[0].Id
+                    );
+                }
+                abfahrtstafelAusfüllen(abfahrtstafel);
         }
     }
 }

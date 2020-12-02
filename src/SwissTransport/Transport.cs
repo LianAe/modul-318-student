@@ -1,4 +1,5 @@
-﻿using System.CodeDom;
+﻿using System;
+using System.CodeDom;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
@@ -63,12 +64,57 @@ namespace SwissTransport
 
             return null;
         }
+        public StationBoardRoot GetStationBoardAtTime(string station, string id, string atDateTime)
+        {
+            station = System.Uri.EscapeDataString(station);
+            id = System.Uri.EscapeDataString(id);
+            atDateTime = System.Uri.EscapeDataString(atDateTime);
+            var request = CreateWebRequest("http://transport.opendata.ch/v1/stationboard?station=" + station 
+                + "&id=" + id
+                + "&datetime=" + atDateTime);
+            var response = request.GetResponse();
+            var responseStream = response.GetResponseStream();
+
+            if (responseStream != null)
+            {
+                var readToEnd = new StreamReader(responseStream).ReadToEnd();
+                var stationboard =
+                    JsonConvert.DeserializeObject<StationBoardRoot>(readToEnd);
+                return stationboard;
+            }
+
+            return null;
+        }
 
         public Connections GetConnections(string fromStation, string toStation)
         {
             fromStation = System.Uri.EscapeDataString(fromStation);
             toStation = System.Uri.EscapeDataString(toStation);
             var request = CreateWebRequest("http://transport.opendata.ch/v1/connections?from=" + fromStation + "&to=" + toStation);
+            var response = request.GetResponse();
+            var responseStream = response.GetResponseStream();
+
+            if (responseStream != null)
+            {
+                var readToEnd = new StreamReader(responseStream).ReadToEnd();
+                var connections =
+                    JsonConvert.DeserializeObject<Connections>(readToEnd);
+                return connections;
+            }
+
+            return null;
+        }
+
+        public Connections GetConnectionsAtTime(string fromStation, string toStation, DateTime atDate, DateTime atTime, int isArrivalTime)
+        {
+            fromStation = System.Uri.EscapeDataString(fromStation);
+            toStation = System.Uri.EscapeDataString(toStation);
+            var request = CreateWebRequest("http://transport.opendata.ch/v1/connections?from=" + fromStation 
+                + "&to=" + toStation 
+                + "&date=" + atDate.ToString("d").Replace('/', '-')
+                + "&time=" + atTime.ToString("t")
+                + "&isArrivalTime=" + isArrivalTime
+                );
             var response = request.GetResponse();
             var responseStream = response.GetResponseStream();
 
